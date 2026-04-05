@@ -14,7 +14,7 @@ const INITIAL_SPEED = 3
 
 const itemTypes = [
   {
-    src: "/heads/head1.jpg",
+    src: "/heads/head1.png",
     type: "good",
     points: 1
   },
