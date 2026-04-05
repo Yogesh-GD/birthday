@@ -1,0 +1,270 @@
+/* CONTAINER */
+
+.cake-container {
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* PLATE UNDER CAKE */
+
+.cake-container::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 110%;
+  height: 26px;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(0,0,0,0.35),
+    transparent
+  );
+
+  border-radius: 50%;
+}
+
+/* BASE LAYER STYLE */
+
+.cake-layer {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  border-radius: 26px;
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.35),
+    inset 0 8px 14px rgba(255,255,255,0.05);
+
+  transition: all 0.3s ease;
+}
+
+/* TOP CHOCOLATE FROSTING */
+
+.layer-top {
+  height: 72px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #7b3f24,
+      #4a2412,
+      #2a140a
+    );
+
+  border-radius: 28px 28px 0 0;
+
+  z-index: 3;
+}
+
+/* CREAM BORDER DECORATION */
+
+.layer-top::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  right: 10px;
+  height: 16px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #fff,
+      #fff 10px,
+      #ffd1dc 10px,
+      #ffd1dc 20px
+    );
+
+  border-radius: 16px;
+}
+
+/* FROSTING DRIP */
+
+.layer-top::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 10%;
+  right: 10%;
+  height: 20px;
+
+  background: #fff3f3;
+
+  border-radius: 0 0 18px 18px;
+}
+
+/* MIDDLE */
+
+.layer-middle {
+  height: 82px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #5a2e17,
+      #3a1d10
+    );
+
+  margin-top: 6px;
+
+  z-index: 2;
+}
+
+/* BOTTOM */
+
+.layer-bottom {
+  height: 92px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #4a2412,
+      #1f0f07
+    );
+
+  margin-top: 6px;
+
+  border-radius: 0 0 28px 28px;
+
+  box-shadow:
+    inset 0 6px 12px rgba(0,0,0,0.4),
+    0 18px 30px rgba(0,0,0,0.45);
+
+  z-index: 1;
+}
+
+/* SPRINKLES */
+
+.layer-top span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff4d6d;
+}
+
+/* CUT LINE */
+
+.cut-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  width: 6px;
+  height: 100%;
+
+  background: white;
+
+  border-radius: 12px;
+
+  transform: translateX(-50%);
+}
+
+/* KNIFE */
+
+.knife {
+  font-size: 52px;
+
+  position: absolute;
+
+  top: -70px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-12deg);
+
+  filter:
+    drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+}
+
+/* CAKE SPLIT EFFECT */
+
+.cake-cut-left {
+  transform: translateX(-18px) rotate(-2deg);
+}
+
+.cake-cut-right {
+  transform: translateX(18px) rotate(2deg);
+}
+
+/* CANDLE */
+
+.candle {
+  width: 14px;
+  height: 60px;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff,
+      #ffffff 6px,
+      #ff4d6d 6px,
+      #ff4d6d 12px
+    );
+
+  border-radius: 6px;
+  position: relative;
+}
+
+/* FLAME */
+
+.flame {
+  width: 16px;
+  height: 22px;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff176 20%,
+      #ff9800 60%,
+      #ff5722
+    );
+
+  border-radius: 50%;
+
+  position: absolute;
+  top: -24px;
+  left: -1px;
+
+  animation: flicker 0.18s infinite alternate;
+
+  box-shadow:
+    0 0 14px rgba(255,165,0,0.8);
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.18);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .cake-container {
+    max-width: 280px;
+  }
+
+  .layer-top {
+    height: 60px;
+  }
+
+  .layer-middle {
+    height: 70px;
+  }
+
+  .layer-bottom {
+    height: 80px;
+  }
+
+}
